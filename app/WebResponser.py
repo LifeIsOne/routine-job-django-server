@@ -200,7 +200,7 @@ class AddRoutineResponser(AsyncJsonWebsocketConsumer):
         # Kakao 로그인 처리 로직 (예시)
         print(f"사용자 데이터 응답중...")
         responseData = AddRoutineResponseData(
-            uers_key="dummy_user_001",
+            user_key="dummy_user_001",
             task_id="dummy_task_001",
             is_added=True,
             routine_message="Routine added successfully."
@@ -241,7 +241,7 @@ class SuccessRoutineResponser(AsyncJsonWebsocketConsumer):
         )
 
         responseData = SuccessRoutineResponseData(
-            uers_key="dummy_user_003",
+            user="dummy_user_003",
             user_name="홍길동",
             success_user_id="success_id_003",
             success_users_name="성공사용자 홍길동",
@@ -285,7 +285,7 @@ class SuccessLikeResponser(AsyncJsonWebsocketConsumer):
         print(f"사용자 데이터 응답중...")
 
         responseData = SuccessLikeResponseData(
-            uers_key="dummy_user_001",
+            user="dummy_user_001",
             user_name="홍길동",
             success_user_id="success_id_001",
             likes=100
@@ -318,7 +318,7 @@ class SuccessRoutineCopyResponser(AsyncJsonWebsocketConsumer):
         print(f"사용자 데이터 응답중...")
 
         responseData = SuccessRoutineCopyResponseData(
-            uers_key="dummy_user_004",
+            user_key="dummy_user_004",
             copied_tasks=3
         )
         print(responseData.get_json())
