@@ -193,7 +193,7 @@ class UserRoutineResponseData(BaseModel):
         return self.model_dump_json()
 
 class AddRoutineRequestData(BaseModel):
-    uers_key: str
+    user_key: str
     task_name: str
     task_category: str
     repeat_type: str
@@ -220,7 +220,7 @@ class AddRoutineRequestData(BaseModel):
         return self.model_dump_json()
 
 class AddRoutineResponseData(BaseModel):
-    uers_key: str
+    user_key: str
     task_id: str
     is_added: bool
     routine_message: str
@@ -241,7 +241,7 @@ class AddRoutineResponseData(BaseModel):
         return self.model_dump_json()
 
 class SuccessRoutineRequestData(BaseModel):
-    uers_key: str
+    user_key: str
     user_name: str
     success_user_id: str
 
@@ -269,7 +269,7 @@ class SuccessRoutineData(BaseModel):
     time_filter: int
 
 class SuccessRoutineResponseData(BaseModel):
-    uers_key: str
+    user_key: str
     user_name: str
     success_user_id: str
     success_users_name: str
@@ -301,7 +301,7 @@ class SuccessRoutineResponseData(BaseModel):
         return self.model_dump_json()
 
 class SuccessLikeRequestData(BaseModel):
-    uers_key: str
+    user_key: str
     user_name: str
     success_user_id: str
     liked: bool
@@ -322,7 +322,7 @@ class SuccessLikeRequestData(BaseModel):
         return self.model_dump_json()
 
 class SuccessLikeResponseData(BaseModel):
-    uers_key: str
+    user_key: str
     user_name: str
     success_user_id: str
     likes: int
@@ -343,7 +343,7 @@ class SuccessLikeResponseData(BaseModel):
         return self.model_dump_json()
 
 class SuccessRoutineCopyRequestData(BaseModel):
-    uers_key: str
+    user_key: str
     success_user_id: str
     copy_type: str
 
@@ -363,7 +363,7 @@ class SuccessRoutineCopyRequestData(BaseModel):
         return self.model_dump_json()
 
 class SuccessRoutineCopyResponseData(BaseModel):
-    uers_key: str
+    user_key: str
     copied_tasks: int
 
     @classmethod
