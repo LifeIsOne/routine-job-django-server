@@ -14,7 +14,7 @@ async def test_websocket(data, uri):
         print("서버 응답:", response)
 
 if __name__ == "__main__":
-    baseurl = "ws://34.64.124.44:8000/"
+    baseurl = "ws://35.239.36.53:8000/"
     # 보낼 JSON 데이터 구성
     data = {
       "login_type": "kakao",
