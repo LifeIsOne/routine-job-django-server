@@ -15,7 +15,8 @@ async def test_websocket(req, data, uri):
         print("서버 응답:", response)
 
 if __name__ == "__main__":
-    baseurl = "ws://35.239.36.53:8000/"
+    # baseurl = "ws://35.239.36.53:8000/"
+    baseurl = "ws://localhost:8000/"
     # 보낼 JSON 데이터 구성
     # 로그인
     data = {
@@ -25,7 +26,7 @@ if __name__ == "__main__":
       "access_token": "dummy_access_token"
     }
     asyncio.run(test_websocket("로그인", data, baseurl + "api/auth/login"))
-    #
+    # 회원가입
     data = {
         "login_type": "kakao",
         "user_name": "홍길동",
@@ -43,20 +44,20 @@ if __name__ == "__main__":
         "interested_routine": True
     }
     asyncio.run(test_websocket("회원가입", data, baseurl + "api/register"))
-
+    # 사용자 정보
     data = {
         "user_key": "dummy_key_001",
         "user_name": "홍길동"
     }
     asyncio.run(test_websocket("사용자 정보", data, baseurl + "api/user-info"))
-
+    # 루틴 리스트
     data = {
         "user_key": "dummy_key_001",
         "user_name": "홍길동",
         "request_date": "2025-03-19"
     }
     asyncio.run(test_websocket("루틴 리스트", data, baseurl + "api/routine_list"))
-
+    # 루틴 추가
     data = {
         "user_key": "dummy_user_001",
         "task_name": "Morning Workout",
@@ -70,14 +71,14 @@ if __name__ == "__main__":
         "start_date": "2025-03-19"
     }
     asyncio.run(test_websocket("루틴 추가", data, baseurl + "api/task/add"))
-
+    # 성공 루틴
     data = {
         "user_key": "dummy_user_001",
         "user_name": "홍길동",
         "success_user_id": "success_id_001"
     }
     asyncio.run(test_websocket("성공 루틴", data, baseurl + "api/success_routine"))
-
+    # 성공 루틴 좋아요
     data = {
         "user_key": "dummy_user_001",
         "user_name": "홍길동",
@@ -85,14 +86,14 @@ if __name__ == "__main__":
         "liked": True
     }
     asyncio.run(test_websocket("성공 루틴 좋아요", data, baseurl + "api/success_routine_like"))
-
+    # 성공 루틴 가져오기
     data = {
         "user_key": "dummy_user_001",
         "success_user_id": "success_id_001",
         "copy_type": "full"
     }
     asyncio.run(test_websocket("성공 루틴 가져오기", data, baseurl + "api/success_routine_copy"))
-
+    # 주간 통계
     data = {
         "user_key": "dummy_user_001",
         "statistics_type": "weekly",
@@ -100,20 +101,20 @@ if __name__ == "__main__":
         "end_date": "2025-03-25"
     }
     asyncio.run(test_websocket("주간 통계", data, baseurl + "api/statistic/weekly"))
-
+    # 월간 통계
     data = {
         "user_key": "dummy_user_001",
         "statistics_type": "monthly",
         "month": "2025-03-01"  # 날짜 형식의 문자열로 제공
     }
     asyncio.run(test_websocket("월간 통계", data, baseurl + "api/statistic/monthly"))
-
+    # 프로필 조회
     data = {
         "user_key": "dummy_user_001",
         "user_name": "홍길동"
     }
     asyncio.run(test_websocket("프로필 조회", data, baseurl + "api/user/profile"))
-
+    # 프로필 수정
     data = {
         "user_key": "dummy_user_001",
         "user_name": "홍길동",
